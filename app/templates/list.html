@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="page-header">
+    <h1>Lista de Clientes</h1>
+</div>
+<div class="table-responsive-xl">
+    <table  class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Carro 1</th>
+                <th>Cor do carro 1</th>
+                <th>Carro 2</th>
+                <th>Cor do carro 2</th>
+                <th>Carro 3</th>
+                <th>Cor do carro 3</th>
+                <th>Excluir</th>
+                <th>Editar</th>
+            </tr>
+        </thead>
+        {% for clientes in client %}
+            <tbody>
+                <tr>
+                    <td>{{ client.id }}</td>
+                    <td>{{ client.nome }}</td>
+                    <td>{{ client.car1 }}</td>
+                    <td>{{ pessoa.numero }}</td>
+                    <td>{{ pessoa.bairro }}</td>
+                    <td>{{ pessoa.cidade }}</td>
+                    <td>{{ pessoa.estado }}</td>
+                    <td>{{ pessoa.fone }}</td>
+                    <td>{{ pessoa.cpf }}</td>
+                    <td>{{ pessoa.email }}</td>
+                    <td><a href="">Remover</a></td>
+                    <td><a href="">Alterar</a></td>
+                </tr>
+            </tbody>
+        {% endfor %}
+    </table><br>
+    <a href="{{ url_for('index') }}"><input type="button" class="btn btn-primary btn-lg" value="Voltar"></a>
+</div>    
+{% endblock %}
